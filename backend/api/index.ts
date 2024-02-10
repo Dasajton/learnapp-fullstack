@@ -1,5 +1,8 @@
-const showMessage = (message: string) => {
-  console.log(message);
-};
+import * as config from "./config";
+import { app } from "./server";
 
-showMessage("TypeScript backend works!");
+app.listen(config.getPort(), () => {
+  console.log(
+    `LearnApp API is running at http://localhost:${config.getPort()}`
+  );
+});
